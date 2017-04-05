@@ -2,24 +2,24 @@
 ## 1.验证登录信息
 ### POST /api/login/VerifyLoginInfo
 #### 期望输入值:
-{
+{  
   userName string  
   userPassword string
 }
 #### 标准化输出项:
-{
+{  
   errCode string  
   errMsg  string  
   token string  
 }
 #### 正确输出项示例:
-{
+{  
   0  
   ""  
   "cf e4 b6 6b d0 d3 4e ce de 23 20 a2 96 d1 da 77 76 e5 c0 55"  
 }
 #### 错误输出项示例:
-{
+{  
   2  
   "Verify logininfo failed"  
   ""  
@@ -27,7 +27,7 @@
 ## 2.插入或更新基本配置
 ### POST /api/configure/PostBasicConfig/:userID
 #### 期望输入项:
-{
+{  
   token string  
   mainPageTitle string  
   categoryName []string  
@@ -35,19 +35,19 @@
   themeColor string  
 }
 #### 标准化输出项:
-{
+{  
   errCode string  
   errMsg  string  
   result  bool  
 }
 #### 正确输出项示例:
-{
+{  
   0  
   ""  
   true  
 }
 #### 错误输出项示例:
-{
+{  
   2  
   "Insert into bd failed"  
   false  
@@ -55,11 +55,11 @@
 ## 3.获取浏览记录
 ### GET /api/record/GetBrowseRecord/:articleID
 #### 期望输入项:
-{
-  token string
+{  
+  token string  
 }
 #### 标准化输出项:
-{
+{  
   errCode int  
   errMsg string  
   data   []BrowseRecord  
@@ -69,7 +69,7 @@ type BrowseRecord struct{
   browseTime string  
 }
 #### 正确输出项示例:
-{
+{  
   0  
   ""  
   {  
@@ -78,11 +78,11 @@ type BrowseRecord struct{
   },  
   {  
     "test"  
-    "2017.4.5 17:00"  
+    "2017.4.5 17:00"   
   }  
 }
 #### 错误输出项示例:
-{
+{  
   2  
   "Not exist thsi articleID in db"  
   ""  
@@ -90,11 +90,11 @@ type BrowseRecord struct{
 ## 4.获取留资信息
 ### GET /api/record/GetFillInfoRecord/:articleID
 #### 期望输入项:
-{
-  token string
+{  
+  token string  
 }
 #### 标准化输出项:
-{
+{  
   errCode int  
   errMsg string  
   data   []string  
@@ -119,11 +119,11 @@ type FillInfoRecord struct{
 ## 5.获取文章列表
 ### GET /api/record/GetArticleList/:userID
 #### 期望输入项:
-{
+{  
   token string  
 }
 #### 标准化输出项:
-{
+{  
   errCode int  
   errMsg string  
   data   []ArticleRecord  
@@ -134,7 +134,7 @@ type ArticleRecord struct{
   articleStatus bool  
 }
 #### 正确输出项示例:
-{
+{  
   0  
   ""  
   {  
@@ -149,19 +149,19 @@ type ArticleRecord struct{
   }  
 }
 #### 错误输出项示例:
-{  
-  2  
+{   
+  2   
   "No exist this userID in db"  
   ""  
 }
 ## 6.获取文章详情
 ### GET /api/content/GetArticleInfo/:articleID
 #### 期望输入值:
-{
+{  
   token string  
 }
 #### 标准化输出项:
-{
+{  
   errCode int  
   errMsg string  
   data   ArticleDetailInfo  
@@ -177,7 +177,7 @@ type ArticleDetailInfo struct {
 	recommandOrDataset     string  //推荐或留资设置  
 }
 #### 正确输出项示例:
-{
+{  
   0  
   ""  
   {  
@@ -192,7 +192,7 @@ type ArticleDetailInfo struct {
   }  
 }
 #### 错误输出项示例:
-{
+{  
   2  
   "No exist this articleID in db"  
   ""  
@@ -206,18 +206,18 @@ type ArticleDetailInfo struct {
   browseTime string  
 }
 #### 标准化输出项:
-{
+{  
   errCode int  
   errMsg string  
   data   []BrowseRecord  
 }
 
-type BrowseRecord struct {
+type BrowseRecord struct {  
 	browseName string  
 	browseTime string  
 }
 #### 正确输出项示例:
-{
+{  
   0  
   ""  
   {  
@@ -232,7 +232,7 @@ type BrowseRecord struct {
   }  
 }
 #### 错误输出项示例:
-{
+{  
   2  
   "No exist this articleID in db"  
   ""  
@@ -240,24 +240,24 @@ type BrowseRecord struct {
 ## 8.插入留资信息
 ### POST /api/record/InsertFillInfoRecord/:articleID
 #### 期望输入项:
-{
+{  
   token string  
   informationList string  
 }
 #### 标准输出项:
-{
+{  
   errCode int  
   errMsg string  
   data bool  
 }
 #### 正确输出项示例:
-{
+{  
   0  
   ""  
   true  
 }
 #### 错误输出项示例:
-{
+{  
   2  
   "No exist this articleID in db"  
   false  
@@ -265,17 +265,17 @@ type BrowseRecord struct {
 ## 9.删除文章
 ### POST /api/content/DeleteArticle/:articleID
 #### 期望输入项:
-{
+{  
   token string  
 }
 #### 标准输出项:
-{
+{  
   errCode int  
   errMsg string  
   data bool  
 }
 #### 正确输出项示例:
-{
+{  
   0  
   ""  
   true  
