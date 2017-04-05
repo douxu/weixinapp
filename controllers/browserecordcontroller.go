@@ -44,8 +44,7 @@ func (b *BrowseRecordController) GetBrowseReocrd() (records []s.BrowseRecord) {
 }
 
 //InsertRecord ：注解路由
-//InsertRecord : api.insertrecord/articleID/:articleID/browseName/:browseName/browseTime/:browseTime
-//InsertRecord : api.insertrecord/get?artcileID=xxxxx&browseName=xxxxx&browseTime=xxxxx
+//InsertRecord : api/insertrecord/articleID/:articleID/browseName/:browseName/browseTime/:browseTime
 //InsertRecord : (POST)insert into database and return affected rowCount
 func (b *BrowseRecordController) InsertRecord() (result bool) {
 	result = false

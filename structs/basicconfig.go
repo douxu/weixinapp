@@ -2,13 +2,14 @@ package structs
 
 //BasicConfig : type of basic config
 type BasicConfig struct {
-	userID        int
+	//userID        int
 	mainPageTitle string
 	categoryName  []string
 	mode          string
 	themeColor    string
 }
 
+/*
 //GetUserID : return BasicConfig 's userID
 func (b *BasicConfig) GetUserID() *int {
 	return &b.userID
@@ -18,7 +19,7 @@ func (b *BasicConfig) GetUserID() *int {
 func (b *BasicConfig) SetUserID(userID int) {
 	b.userID = userID
 }
-
+*/
 //GetMainPageTitle : return BasicConfig 's mainPageTitle
 func (b *BasicConfig) GetMainPageTitle() *string {
 	return &b.mainPageTitle

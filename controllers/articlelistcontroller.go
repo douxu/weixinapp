@@ -28,10 +28,13 @@ func (a *ArticleListController) GetArticleList() (records []s.ArtcileList) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if rows.Next() {
+	for rows.Next() {
 		var record s.ArtcileList
-		rows.Scan(record.GetArticleTitle(), record.GetPictureURL(),
+		err := rows.Scan(record.GetArticleTitle(), record.GetPictureURL(),
 			record.GetArticleTraffic(), record.GetDataNum())
+		if err != nil {
+			log.Fatal(err)
+		}
 		records = append(records, record)
 	}
 	return records
