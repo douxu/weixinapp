@@ -2,16 +2,17 @@ package structs
 
 //ArticleDetailInfo : type of article detail info
 type ArticleDetailInfo struct {
-	userID                 int
-	mainPageTitle          string
-	pictureURL             string
-	articleContent         string
-	readTargetNum          int
-	increaseStartTime      int
-	increaseContinuousTime int
-	recommandOrDataset     string
+	UserID                 int
+	MainPageTitle          string
+	PictureURL             string
+	ArticleContent         string
+	ReadTargetNum          int
+	IncreaseStartTime      int
+	IncreaseContinuousTime int
+	RecommandOrDataset     string
 }
 
+/*
 //GetUserID : return ArticleDetailInfo 's userID
 func (a *ArticleDetailInfo) GetUserID() int {
 	return a.userID
@@ -91,3 +92,4 @@ func (a *ArticleDetailInfo) GetRecommandOrDataset() string {
 func (a *ArticleDetailInfo) SetRecommandOrDataset(recommandOrDataset string) {
 	a.recommandOrDataset = recommandOrDataset
 }
+*/

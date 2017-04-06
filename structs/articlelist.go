@@ -2,13 +2,14 @@ package structs
 
 //ArtcileList : type of ArtcileList
 type ArtcileList struct {
-	artcileTitle   string
-	pictureURL     string
-	articleTraffic int
-	dataNum        int
-	operatorStatus bool
+	ArticleTitle   string
+	PictureURL     string
+	ArticleTraffic int
+	DataNum        int
+	OperatorStatus bool
 }
 
+/*
 //GetArticleTitle : return ArtcileList 's artcileTitle
 func (a *ArtcileList) GetArticleTitle() *string {
 	return &a.artcileTitle
@@ -58,3 +59,4 @@ func (a *ArtcileList) GetOperatorStatus() *bool {
 func (a *ArtcileList) SetOperatorStatus(operatorStatus bool) {
 	a.operatorStatus = operatorStatus
 }
+*/

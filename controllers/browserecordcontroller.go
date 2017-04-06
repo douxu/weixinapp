@@ -14,7 +14,6 @@ type BrowseRecordController struct {
 	beego.Controller
 }
 
-//GetBrowseReocrd ：注解路由
 //GetBrowseReocrd : get browse record from database
 func (b *BrowseRecordController) GetBrowseReocrd() (records []s.BrowseRecord) {
 	articleID, err := b.GetInt("articleID")
@@ -34,7 +33,7 @@ func (b *BrowseRecordController) GetBrowseReocrd() (records []s.BrowseRecord) {
 	}
 	if rows.Next() {
 		var record s.BrowseRecord
-		err := rows.Scan(record.GetBrowseName(), record.GetBrowseTime())
+		err := rows.Scan(record.BrowseName, record.BrowseTime)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -43,7 +42,6 @@ func (b *BrowseRecordController) GetBrowseReocrd() (records []s.BrowseRecord) {
 	return records
 }
 
-//InsertRecord ：注解路由
 //InsertRecord : api/insertrecord/articleID/:articleID/browseName/:browseName/browseTime/:browseTime
 //InsertRecord : (POST)insert into database and return affected rowCount
 func (b *BrowseRecordController) InsertRecord() (result bool) {

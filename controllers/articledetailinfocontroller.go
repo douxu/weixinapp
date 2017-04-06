@@ -30,9 +30,9 @@ func (a *ArticleDetailInfo) InsertArticleDetailInfo() (result s.ReturnStructs) {
 
 		log.Fatal(err)
 	}
-	res, err := stmt.Exec(articleDeatilInfo.GetUserID(), articleDeatilInfo.GetUserID(),
-		articleDeatilInfo.GetUserID(), articleDeatilInfo.GetUserID(), articleDeatilInfo.GetUserID(),
-		articleDeatilInfo.GetUserID(), articleDeatilInfo.GetUserID(), articleDeatilInfo.GetUserID())
+	res, err := stmt.Exec(articleDeatilInfo.UserID, articleDeatilInfo.UserID,
+		articleDeatilInfo.UserID, articleDeatilInfo.UserID, articleDeatilInfo.UserID,
+		articleDeatilInfo.UserID, articleDeatilInfo.UserID, articleDeatilInfo.UserID)
 	if err != nil {
 
 		log.Fatal(err)
@@ -41,7 +41,7 @@ func (a *ArticleDetailInfo) InsertArticleDetailInfo() (result s.ReturnStructs) {
 	if err != nil {
 		log.Fatal(err)
 	} else if effectrow == int64(oneRecord) {
-		result.SetErrorCode(common.ResultAsNormal)
+		result.ErrorCode = common.ResultAsNormal
 	}
 	return result
 }
@@ -57,18 +57,18 @@ func (a *ArticleDetailInfo) GetArticleDetailInfo() (result s.ReturnStructs) {
 	sql := "SELECT ArticleTitle, PictureUrl, Content, ReadTargetNum," +
 		" IncreaseStartTime, IncreaseContinuousTime, RecommandOrDateSet" +
 		" from articledetailinfotable where ArticleID = ?"
-	err = db.QueryRow(sql, articleID).Scan(articleDatailInfo.GetMainPageTitle(),
-		articleDatailInfo.GetPictureURL(),
-		articleDatailInfo.GetArticleContent(),
-		articleDatailInfo.GetReadTargetNum(),
-		articleDatailInfo.GetIncreaseStartTime(),
-		articleDatailInfo.GetIncreaseContinuousTime(),
-		articleDatailInfo.GetRecommandOrDataset())
+	err = db.QueryRow(sql, articleID).Scan(articleDatailInfo.MainPageTitle,
+		articleDatailInfo.PictureURL,
+		articleDatailInfo.ArticleContent,
+		articleDatailInfo.ReadTargetNum,
+		articleDatailInfo.IncreaseStartTime,
+		articleDatailInfo.IncreaseContinuousTime,
+		articleDatailInfo.RecommandOrDataset)
 	if err != nil {
 		log.Fatal(err)
 	}
-	result.SetDataStruct(articleDatailInfo)
-	result.SetErrorCode(common.ResultAsNormal)
-	result.SetErrorMsg("")
+	result.DataStruct = articleDatailInfo
+	result.ErrorCode = common.ResultAsNormal
+	result.ErrorMsg = ""
 	return result
 }

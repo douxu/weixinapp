@@ -17,7 +17,7 @@ type ArticleListController struct {
 
 //GetArticleList : return articlelist from database
 func (a *ArticleListController) GetArticleList() (records []s.ArtcileList) {
-	AutherID, err := a.GetInt("AuterID")
+	AutherID, err := a.GetInt(":AuterID")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -30,8 +30,8 @@ func (a *ArticleListController) GetArticleList() (records []s.ArtcileList) {
 	}
 	for rows.Next() {
 		var record s.ArtcileList
-		err := rows.Scan(record.GetArticleTitle(), record.GetPictureURL(),
-			record.GetArticleTraffic(), record.GetDataNum())
+		err := rows.Scan(record.ArticleTitle, record.PictureURL,
+			record.ArticleTraffic, record.DataNum)
 		if err != nil {
 			log.Fatal(err)
 		}

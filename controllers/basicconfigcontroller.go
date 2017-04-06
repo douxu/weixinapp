@@ -31,8 +31,8 @@ func (b *BasicConfigController) GetBasicConfig() (config s.BasicConfig) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	rows.Scan(config.GetMainPageTitle, config.GetCategoryName,
-		config.GetMode, config.GetThemeColor)
+	rows.Scan(config.MainPageTitle, config.CategoryName,
+		config.Mode, config.ThemeColor)
 	return config
 }
 
@@ -62,8 +62,8 @@ func (b *BasicConfigController) InsertOrUpdateBasicConfig() (result bool) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	res, err := stmt.Exec(basicconfig.GetMainPageTitle(), basicconfig.GetCategoryName(),
-		basicconfig.GetMode(), basicconfig.GetThemeColor())
+	res, err := stmt.Exec(basicconfig.MainPageTitle, basicconfig.CategoryName,
+		basicconfig.Mode, basicconfig.ThemeColor)
 	if err != nil {
 		log.Fatal(err)
 	}

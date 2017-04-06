@@ -17,7 +17,7 @@ type FillInfomationController struct {
 
 //GetRecord : get fillinfo record from database
 func (f *FillInfomationController) GetRecord() (records []s.DataInfo) {
-	articleID, err := f.GetInt("articleID")
+	articleID, err := f.GetInt(":articleID")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -34,7 +34,7 @@ func (f *FillInfomationController) GetRecord() (records []s.DataInfo) {
 	}
 	if rows.Next() {
 		var record s.DataInfo
-		err := rows.Scan(record.GetArticleID(), record.GetInfomationList())
+		err := rows.Scan(record.ArticleID, record.InfomationList)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -46,7 +46,7 @@ func (f *FillInfomationController) GetRecord() (records []s.DataInfo) {
 //Insertrecord : insert record into database
 func (f *FillInfomationController) Insertrecord() (result bool) {
 	result = false
-	articleID, err := f.GetInt("articleID")
+	articleID, err := f.GetInt(":articleID")
 	if err != nil {
 		log.Fatal(err)
 	}

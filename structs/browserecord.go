@@ -2,10 +2,11 @@ package structs
 
 //BrowseRecord : type of return browserecord
 type BrowseRecord struct {
-	browseName string
-	browseTime string
+	BrowseName string
+	BrowseTime string
 }
 
+/*
 //GetBrowseName : return BrowseRecord 's browseName
 func (b *BrowseRecord) GetBrowseName() *string {
 	return &b.browseName
@@ -25,3 +26,4 @@ func (b *BrowseRecord) GetBrowseTime() *string {
 func (b *BrowseRecord) SetBrowseTime(browsetime string) {
 	b.browseTime = browsetime
 }
+*/

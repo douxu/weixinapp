@@ -7,8 +7,8 @@ import (
 )
 
 const (
-	dbName         = ""
-	dataSourceName = ""
+	dbName         = "app_fangzhoutest"
+	dataSourceName = "douxu:123@tcp(localhost:3306)/sns?charset=utf8"
 )
 
 //Connectdatabase : func for connect db

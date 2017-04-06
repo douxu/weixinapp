@@ -2,10 +2,11 @@ package structs
 
 //DataInfo : type of fill in information
 type DataInfo struct {
-	articleID      int
-	infomationList string
+	ArticleID      int
+	InfomationList string
 }
 
+/*
 //GetArticleID : return DataInfo 's articleID
 func (d *DataInfo) GetArticleID() *int {
 	return &d.articleID
@@ -24,4 +25,4 @@ func (d *DataInfo) GetInfomationList() *string {
 //SetInfomationList : return DataInfo 's infomationList
 func (d *DataInfo) SetInfomationList(infomationList string) {
 	d.infomationList = infomationList
-}
+}*/
