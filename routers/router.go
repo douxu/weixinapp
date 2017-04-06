@@ -8,5 +8,5 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.MainController{})
-	beego.Router("/api/login/VerifyLoginInfo", &controllers.UserController{})
+	beego.Router("/api/login/VerifyLoginInfo", &controllers.UserController{},"post:LoginVerify")
 }
